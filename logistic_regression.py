@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from imblearn.over_sampling import SMOTE
 from sklearn.metrics import classification_report, confusion_matrix, precision_score, recall_score, roc_auc_score, roc_curve, confusion_matrix
 import itertools
-
+import statsmodels.api as sm
 RSEED = 50
 
 data = pd.read_csv('data/qt51.csv')
@@ -130,6 +130,10 @@ sn.heatmap(confusion_matrix, annot=True)
 evaluate_model(predictions, probs, train_predictions, train_probs)
 
 print('Accuracy: ',metrics.accuracy_score(y_test, y_pred))
+
+
+results = sm.OLS(y, X).fit()
+print(results.summary())
 
 
 

@@ -4,6 +4,7 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt 
 from sklearn.linear_model import LinearRegression
+import statsmodels.api as sm
 
 #Linear regression
 def regression():
@@ -21,5 +22,9 @@ def regression():
     plt.plot(X, Y_pred, color='red')
     plt.show()
     r_squared = model.score(X,Y)
-    print(r_squared)
+    #print(r_squared)
 
+    results = sm.OLS(Y, X).fit()
+    print(results.summary())
+
+regression()
