@@ -220,6 +220,14 @@ Example in which we could use decision tree or random forest
 * Feature of classification models that tells you how important a certain feature is in predicting the outcome you want to predict. 
 
 
+## Regression VS Classification
+
+Fundamentally, classification is about predicting a label and regression is about predicting a quantity.
+* Predictive modeling is about the problem of learning a mapping function from inputs to outputs called function approximation.
+* Classification is the problem of predicting a discrete class label output for an example.
+* Regression is the problem of predicting a continuous quantity output for an example.
+
+https://machinelearningmastery.com/classification-versus-regression-in-machine-learning/#:~:text=Fundamentally%2C%20classification%20is%20about%20predicting,is%20about%20predicting%20a%20quantity.&text=That%20classification%20is%20the%20problem,quantity%20output%20for%20an%20example.
 
 
 
