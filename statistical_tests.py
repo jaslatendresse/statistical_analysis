@@ -2,9 +2,15 @@ import pandas as pd
 import scipy 
 import numpy as np
 import math
+import matplotlib.pyplot as plt 
+from sklearn.linear_model import LinearRegression
 from scipy.stats import ranksums, wilcoxon
 
-data = pd.read_csv('qt51.csv')
+"""
+https://docs.scipy.org/doc/scipy/reference/stats.html
+"""
+
+data = pd.read_csv('data/qt51.csv')
 
 def get_data_info():
     #names(data)
@@ -54,17 +60,6 @@ def ranksum_test():
 
 #Cliff's delta https://github.com/neilernst/cliffsDelta 
 
-#Dealing with categorical data
-def encode():
-    #get the categorical column - in our case 'subsystem'
-    subsystem_dummies = pd.get_dummies(data.subsystem)
 
-    #create new dataframe with the encoded categorical features
-    new_data = pd.concat([data, subsystem_dummies], axis=1)
-"""
-We want to predict if a file will be buggy or not. 
-The class label for this is "post_bugs" 
 
-https://docs.scipy.org/doc/scipy/reference/stats.html
 
-"""
